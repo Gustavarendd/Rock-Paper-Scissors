@@ -2,12 +2,23 @@ const choices = ["rock", "paper", "scissors"];
 let winners = [];
 
 function reset() {
-  var btnRemove = document.querySelectorAll(".btn");
-  btnRemove.style.display = "none";
-  document.querySelector(".reset").style.display = "flex";
-  //document.querySelector(".winner").textContent = winner;
-  //document.querySelector(".winner").textContent = winner;
-  //document.querySelector(".winner").textContent = winner;
+  winners = [];
+  document.querySelector(".playerChoice").textContent = "---------";
+  document.querySelector(".computerChoice").textContent = "---------";
+  document.querySelector(".winner").textContent = "---------";
+  document.querySelector(".playerScore").textContent = "---------";
+  document.querySelector(".computerScore").textContent = "---------";
+  document.querySelector(".ties").textContent = "---------";
+  document.querySelector(".headerScore").textContent = "Score";
+  document.querySelector(".headerResult").textContent = "Round";
+  document.querySelector(".reset").style.display = "none";
+  let btn = document.querySelectorAll(".btn");
+  btn.forEach((btn) => (btn.disabled = false));
+}
+
+function removeBtn() {
+  let btn = document.querySelectorAll(".btn");
+  btn.forEach((btn) => (btn.disabled = true));
 }
 
 function computerChoice() {
@@ -36,21 +47,27 @@ function playRound(playerChoice) {
   document.querySelector(".computerChoice").textContent =
     "Computer choose: " + computerSelection;
   score();
+  round();
   let win = logWins();
   if (win == 5) {
     firstToFive();
-    reset();
+    document.querySelector(".reset").style.display = "flex";
+    removeBtn();
   }
+}
+
+function round() {
+  let roundNr = winners.length;
+  document.querySelector(".headerResult").textContent = "Round " + roundNr;
 }
 
 function score() {
   let playerWins = winners.filter((item) => item == "You Win!").length;
   let computerWins = winners.filter((item) => item == "Computer Wins!").length;
   let ties = winners.filter((item) => item == "It's a tie!").length;
-  document.querySelector(".playerScore").textContent =
-    "Your score: " + playerWins;
+  document.querySelector(".playerScore").textContent = "You: " + playerWins;
   document.querySelector(".computerScore").textContent =
-    "Computer score: " + computerWins;
+    "Computer: " + computerWins;
   document.querySelector(".ties").textContent = "Ties: " + ties;
 }
 

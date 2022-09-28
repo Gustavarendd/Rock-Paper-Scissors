@@ -9,23 +9,25 @@
   <body>
     <h1>Rock Paper Scissors</h1>
     <p>Chose your Weapon!</p>
-    <div class="btns">
-      <button class="reset">Play Again?</button>
-      <button id="rock" class="btn">Rock</button>
-      <button id="paper" class="btn">Paper</button>
-      <button id="sissors" class="btn">Scissors</button>
+    <div class="buttons">
+      <button class="reset" onclick="reset()">Play Again?</button>
+      <div class="playBtn">
+        <button id="rock" class="btn">Rock</button>
+        <button id="paper" class="btn">Paper</button>
+        <button id="scissors" class="btn">Scissors</button>
+      </div>
     </div>
     <div class="results">
-      <h2 class="headerResult">Round 1</h2>
-      <div class="playerChoice">player</div>
-      <div class="computerChoice">comp</div>
-      <div class="winner">text here</div>
+      <h2 class="headerResult">Round</h2>
+      <div class="playerChoice">---------</div>
+      <div class="computerChoice">---------</div>
+      <div class="winner">---------</div>
     </div>
     <div class="score">
-      <h2 class="headerScore">The Score</h2>
-      <div class="playerScore">0</div>
-      <div class="computerScore">0</div>
-      <div class="ties">0</div>
+      <h2 class="headerScore">Score</h2>
+      <div class="playerScore">---------</div>
+      <div class="computerScore">---------</div>
+      <div class="ties">---------</div>
     </div>
   </body>
 </html>
