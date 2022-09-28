@@ -2,11 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="uft-8" />
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Rock, Paper, Scissors</title>
   </head>
   <body>
     <h1>Rock Paper Scissors</h1>
-    <p>Open the console to play!</p>
-    <script src="index.js"></script>
+    <p>Chose your Weapon!</p>
+    <div class="btns">
+      <button class="reset">Play Again?</button>
+      <button id="rock" class="btn">Rock</button>
+      <button id="paper" class="btn">Paper</button>
+      <button id="sissors" class="btn">Scissors</button>
+    </div>
+    <div class="results">
+      <h2 class="headerResult">Round 1</h2>
+      <div class="playerChoice">player</div>
+      <div class="computerChoice">comp</div>
+      <div class="winner">text here</div>
+    </div>
+    <div class="score">
+      <h2 class="headerScore">The Score</h2>
+      <div class="playerScore">0</div>
+      <div class="computerScore">0</div>
+      <div class="ties">0</div>
+    </div>
   </body>
 </html>
